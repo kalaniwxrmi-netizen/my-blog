@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Hidden Ledger</title>
+<style>
+body{background:#010103;color:#eee;font-family:system-ui;padding:36px}
+.wrap{max-width:800px;margin:40px auto;background:rgba(255,255,255,0.02);padding:24px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.muted{color:#9aa0b4}
+</style>
+</head>
+<body>
+
+<div class="wrap" id="locked">
+<h2>Locked</h2>
+<p class="muted">You need to enter the correct code on the <a href="/unlock.html">unlock page</a>.</p>
+</div>
+
+<div class="wrap" id="content" style="display:none;">
+<h1>Ledger — Page 19</h1>
+<p class="muted">(Fictional ARG content)</p>
+<pre style="white-space:pre-wrap">
+— page 19 —
+
+I left the bench at 00:17. It wasn’t there when I arrived; it was waiting to be found. Found things always look bored.
+
+Blue pen only now. Blue is honest.
+</pre>
+</div>
+
+<script>
+if(sessionStorage.getItem('unlocked_pm_42x83.html') === '1'){
+    document.getElementById('locked').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+} else {
+    setTimeout(()=>location.href='/unlock.html',2000);
+}
+</script>
+
+</body>
+</html>
